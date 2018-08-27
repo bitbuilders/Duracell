@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4971262662040008}
   - component: {fileID: 114433485438028094}
   - component: {fileID: 212635375538458744}
+  - component: {fileID: 58307285501391474}
+  - component: {fileID: 50016374399419988}
   m_Layer: 0
   m_Name: Product
   m_TagString: Untagged
@@ -41,6 +43,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50016374399419988
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1089903345435364}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0.5
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
+--- !u!58 &58307285501391474
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1089903345435364}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.9
 --- !u!114 &114433485438028094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,6 +92,8 @@ MonoBehaviour:
   m_flashlightPNG: {fileID: 21300000, guid: 8f8731c0bee26dd4ab85d4285f90b6af, type: 3}
   m_toasterPNG: {fileID: 21300000, guid: 27f193c2932baa44b82595acd8d31ded, type: 3}
   m_robotPNG: {fileID: 21300000, guid: 2773c44684bb93e40915d3d2cccb21a2, type: 3}
+  m_falloffRate: 1
+  m_type: 0
 --- !u!212 &212635375538458744
 SpriteRenderer:
   m_ObjectHideFlags: 1

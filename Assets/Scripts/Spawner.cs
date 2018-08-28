@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour
 {
@@ -20,10 +21,11 @@ public class Spawner : MonoBehaviour
     [SerializeField] [Range(0.0f, 90.0f)] float m_startAngleMAX = 35.0f;
     [SerializeField] [Range(0.0f, 10.0f)] float m_startForceMIN = 1.0f;
     [SerializeField] [Range(0.0f, 10.0f)] float m_startForceMAX = 2.0f;
+    [SerializeField] string m_nextLevel = "";
     [SerializeField] Difficulty m_difficulty = Difficulty.EASY;
 
-    List<float> m_difficultyRates = new List<float>() { 0.025f, 0.05f, 0.075f };
-    List<int> m_difficultyCounts = new List<int>() { 10, 20, 30 };
+    List<float> m_difficultyRates = new List<float>() { 0.035f, 0.070f, 0.090f };
+    List<int> m_difficultyCounts = new List<int>() { 10, 18, 25 };
 
     float m_currentSpawnRate;
     float m_time;
@@ -39,10 +41,16 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         m_time += Time.deltaTime;
-        if (m_time >= m_currentSpawnRate)
+        if (m_time >= m_currentSpawnRate && m_count > 0)
         {
             m_time = 0.0f;
             SpawnProduct();
+            m_count--;
+
+            if (m_count <= 0.0f)
+            {
+                StartCoroutine(NextLevel());
+            }
         }
 
         m_currentSpawnRate -= Time.deltaTime * m_difficultyRates[(int)m_difficulty];
@@ -58,6 +66,8 @@ public class Spawner : MonoBehaviour
         float angle = Random.Range(m_startAngleMIN, m_startAngleMAX);
         velocity = Quaternion.AngleAxis(-angle, Vector3.forward) * velocity;
         product.InitializeRandom(velocity);
+
+        Destroy(go, 5.0f);
     }
 
     public Vector2 GetRandomPoint()
@@ -69,5 +79,11 @@ public class Spawner : MonoBehaviour
         point = new Vector2(x, y);
 
         return point;
+    }
+
+    private IEnumerator NextLevel()
+    {
+        yield return new WaitForSeconds(4.25f);
+        SceneManager.LoadScene(m_nextLevel);
     }
 }

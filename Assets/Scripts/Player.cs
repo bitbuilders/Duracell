@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
 
         GameObject go = Instantiate(m_projectile, transform.position, Quaternion.identity, null);
         Battery b = go.GetComponent<Battery>();
-        b.Initialize(velocity);
+        b.Initialize(velocity, this);
 
         Destroy(go, 4.0f);
 

@@ -17,7 +17,10 @@ public class Product : MonoBehaviour
     [SerializeField] Sprite m_robotPNG = null;
     [SerializeField] [Range(0.0f, 900.0f)] float m_initRotMIN = 45.0f;
     [SerializeField] [Range(0.0f, 900.0f)] float m_initRotMAX = 150.0f;
+    [SerializeField] [Range(0, 1000)] int m_points = 250;
     [SerializeField] ProductType m_type = ProductType.FLASHLIGHT;
+
+    public int PointValue { get { return m_points; } }
 
     Rigidbody2D m_rigidbody2D;
     SpriteRenderer m_spriteRenderer;

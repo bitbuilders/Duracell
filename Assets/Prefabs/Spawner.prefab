@@ -113,8 +113,8 @@ MonoBehaviour:
   m_spawnRate: 2
   m_spawnPointMIN: {fileID: 1001980884113930}
   m_spawnPointMAX: {fileID: 1317741006118202}
-  m_startAngleMIN: 15
+  m_startAngleMIN: 25
   m_startAngleMAX: 50
-  m_startForceMIN: 4.25
+  m_startForceMIN: 5
   m_startForceMAX: 7
   m_difficulty: 0

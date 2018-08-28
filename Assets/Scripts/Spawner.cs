@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] [Range(0.0f, 10.0f)] float m_startForceMAX = 2.0f;
     [SerializeField] Difficulty m_difficulty = Difficulty.EASY;
 
-    List<float> m_difficultyRates = new List<float>() { 0.05f, 0.10f, 0.15f };
+    List<float> m_difficultyRates = new List<float>() { 0.025f, 0.05f, 0.075f };
     List<int> m_difficultyCounts = new List<int>() { 10, 20, 30 };
 
     float m_currentSpawnRate;

@@ -15,22 +15,31 @@ public class Product : MonoBehaviour
     [SerializeField] Sprite m_flashlightPNG = null;
     [SerializeField] Sprite m_toasterPNG = null;
     [SerializeField] Sprite m_robotPNG = null;
-    [SerializeField] [Range(0.0f, 10.0f)] float m_falloffRate = 1.0f;
+    [SerializeField] [Range(0.0f, 900.0f)] float m_initRotMIN = 45.0f;
+    [SerializeField] [Range(0.0f, 900.0f)] float m_initRotMAX = 150.0f;
     [SerializeField] ProductType m_type = ProductType.FLASHLIGHT;
 
     Rigidbody2D m_rigidbody2D;
     SpriteRenderer m_spriteRenderer;
     Vector3 m_velocity;
+    float m_rotationSpeed;
+    float m_rotation;
     
-    void Start()
+    void Awake()
     {
         m_spriteRenderer = GetComponent<SpriteRenderer>();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
     }
-    
+
+    private void Start()
+    {
+        m_rotationSpeed = Random.Range(m_initRotMIN, m_initRotMAX);
+    }
+
     void Update()
     {
-
+        m_rotation += m_rotationSpeed * Time.deltaTime;
+        m_rigidbody2D.MoveRotation(m_rotation);
     }
 
     public void Initialize(Vector3 velocity, ProductType type = ProductType.FLASHLIGHT)

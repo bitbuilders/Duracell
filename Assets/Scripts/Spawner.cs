@@ -10,12 +10,15 @@ public class Spawner : MonoBehaviour
     {
         EASY,
         MEDIUM,
-        HARD
+        HARD,
+        INSANE,
+        IMMORTAL
     }
 
     [SerializeField] GameObject m_spawnee = null;
     [SerializeField] GameObject m_transition = null;
-    [SerializeField] [Range(0.0f, 5.0f)] float m_spawnRate = 2.0f;
+    [SerializeField] [Range(0.0f, 5.0f)] float m_spawnRateStart = 2.0f;
+    [SerializeField] [Range(0.0f, 5.0f)] float m_spawnRateEnd = 2.0f;
     [SerializeField] GameObject m_spawnPointRightMIN = null;
     [SerializeField] GameObject m_spawnPointRightMAX = null;
     [SerializeField] GameObject m_spawnPointLeftMIN = null;
@@ -25,12 +28,12 @@ public class Spawner : MonoBehaviour
     [SerializeField] [Range(0.0f, 10.0f)] float m_startForceMIN = 1.0f;
     [SerializeField] [Range(0.0f, 10.0f)] float m_startForceMAX = 2.0f;
     [SerializeField] string m_nextLevel = "";
-    [SerializeField] Difficulty m_difficulty = Difficulty.EASY;
+    [SerializeField] AnimationCurve m_difficultyCurve = null;
 
     public int Count { get; private set; }
 
-    List<float> m_difficultyRates = new List<float>() { 0.035f, 0.070f, 0.090f };
-    List<int> m_difficultyCounts = new List<int>() { 10, 18, 25 };
+    List<float> m_difficultyRates = new List<float>() { 0.035f, 0.040f, 0.045f, 0.050f, 0.055f};
+    List<int> m_difficultyCounts = new List<int>() { 10, 20, 25, 30, 35 };
 
     float m_currentSpawnRate;
     float m_time;

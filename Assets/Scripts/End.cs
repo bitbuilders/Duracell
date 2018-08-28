@@ -13,5 +13,6 @@ public class End : MonoBehaviour
     {
         m_player = FindObjectOfType<Player>();
         m_message.text = "You got " + m_player.Score.ToString("D6") + " points!";
+        m_player.Score = 0;
     }
 }

@@ -139,8 +139,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Wow!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7b0523ae1fbd32e478561620791df9e1, type: 2}
-  m_sharedMaterial: {fileID: 21867348712386210, guid: 7b0523ae1fbd32e478561620791df9e1,
+  m_fontAsset: {fileID: 11400000, guid: cc27d0ac5dd1f244ba4831ebad658037, type: 2}
+  m_sharedMaterial: {fileID: 21345280724340144, guid: cc27d0ac5dd1f244ba4831ebad658037,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 5
@@ -251,10 +251,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: You're <color=red>A<color=orange>w<color=yellow>e<color=green>s<color=blue>o<color=purple>m<color=#FF84E8>e<color=black>!
+  m_text: You're <color=red>A<color=orange>w<color=yellow>e<color=green>s<color=blue>o<color=purple>m<color=#FF84E8>e<color=white>!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7b0523ae1fbd32e478561620791df9e1, type: 2}
-  m_sharedMaterial: {fileID: 21867348712386210, guid: 7b0523ae1fbd32e478561620791df9e1,
+  m_fontAsset: {fileID: 11400000, guid: cc27d0ac5dd1f244ba4831ebad658037, type: 2}
+  m_sharedMaterial: {fileID: 21345280724340144, guid: cc27d0ac5dd1f244ba4831ebad658037,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0

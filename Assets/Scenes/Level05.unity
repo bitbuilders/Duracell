@@ -374,12 +374,12 @@ Prefab:
     - target: {fileID: 114453214462432190, guid: 9d6e46c345cd39b40b9a92a0cc4c326b,
         type: 2}
       propertyPath: m_nextLevel
-      value: Level04
+      value: EndScreen
       objectReference: {fileID: 0}
     - target: {fileID: 114453214462432190, guid: 9d6e46c345cd39b40b9a92a0cc4c326b,
         type: 2}
       propertyPath: m_difficulty
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6e46c345cd39b40b9a92a0cc4c326b, type: 2}

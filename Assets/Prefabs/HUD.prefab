@@ -302,8 +302,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 20 Left
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f993479242065854e80452006a31eb11, type: 2}
-  m_sharedMaterial: {fileID: 21725061632525462, guid: f993479242065854e80452006a31eb11,
+  m_fontAsset: {fileID: 11400000, guid: cc27d0ac5dd1f244ba4831ebad658037, type: 2}
+  m_sharedMaterial: {fileID: 21345280724340144, guid: cc27d0ac5dd1f244ba4831ebad658037,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -312,7 +312,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4278234613
   m_fontColor: {r: 0.9607843, g: 0.68095237, b: 0, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}

@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject m_spawnee = null;
     [SerializeField] GameObject m_transition = null;
     [SerializeField] [Range(0.0f, 5.0f)] float m_spawnRateStart = 2.0f;
-    [SerializeField] [Range(0.0f, 5.0f)] float m_spawnRateEnd = 2.0f;
+    [SerializeField] [Range(0.0f, 5.0f)] float m_spawnRateEnd = 1.0f;
     [SerializeField] GameObject m_spawnPointRightMIN = null;
     [SerializeField] GameObject m_spawnPointRightMAX = null;
     [SerializeField] GameObject m_spawnPointLeftMIN = null;
@@ -28,11 +28,11 @@ public class Spawner : MonoBehaviour
     [SerializeField] [Range(0.0f, 10.0f)] float m_startForceMIN = 1.0f;
     [SerializeField] [Range(0.0f, 10.0f)] float m_startForceMAX = 2.0f;
     [SerializeField] string m_nextLevel = "";
+    [SerializeField] Difficulty m_difficulty = Difficulty.EASY;
     [SerializeField] AnimationCurve m_difficultyCurve = null;
 
     public int Count { get; private set; }
-
-    List<float> m_difficultyRates = new List<float>() { 0.035f, 0.040f, 0.045f, 0.050f, 0.055f};
+    
     List<int> m_difficultyCounts = new List<int>() { 10, 20, 25, 30, 35 };
 
     float m_currentSpawnRate;
@@ -41,13 +41,14 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         int diff = (int)m_difficulty;
-        m_currentSpawnRate = m_spawnRate;
+        m_currentSpawnRate = m_spawnRateStart;
         Count = m_difficultyCounts[diff];
     }
-    
+
     void Update()
     {
         m_time += Time.deltaTime;
+
         if (m_time >= m_currentSpawnRate && Count > 0)
         {
             m_time = 0.0f;
@@ -68,7 +69,8 @@ public class Spawner : MonoBehaviour
             }
         }
 
-        m_currentSpawnRate -= Time.deltaTime * m_difficultyRates[(int)m_difficulty];
+        float t = 1.0f - ((float)Count / (float)m_difficultyCounts[(int)m_difficulty]);
+        m_currentSpawnRate = Mathf.Lerp(m_spawnRateStart, m_spawnRateEnd, m_difficultyCurve.Evaluate(t));
     }
 
     public void SpawnProductRight()
@@ -123,9 +125,9 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator NextLevel()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(4.0f);
         Instantiate(m_transition, Vector3.zero, Quaternion.identity, null);
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(5.5f);
         SceneManager.LoadScene(m_nextLevel);
     }
 }

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     public int Score { get; set; }
 
+    AudioSource m_audioSource;
     Animator m_animator;
     float m_time;
 
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
         }
 
         m_animator = GetComponent<Animator>();
+        m_audioSource = GetComponent<AudioSource>();
     }
     
     void Update()
@@ -55,5 +57,6 @@ public class Player : MonoBehaviour
         Destroy(go, 4.0f);
 
         m_animator.SetTrigger("Throw");
+        m_audioSource.Play();
     }
 }

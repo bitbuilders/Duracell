@@ -170,7 +170,8 @@ MonoBehaviour:
   m_spawnee: {fileID: 1089903345435364, guid: 7925c52393e1fd0418961707c0844824, type: 2}
   m_transition: {fileID: 1009725902522002, guid: a52154a958820514d862143f013c8a76,
     type: 2}
-  m_spawnRate: 3
+  m_spawnRateStart: 2
+  m_spawnRateEnd: 1
   m_spawnPointRightMIN: {fileID: 1321226739561288}
   m_spawnPointRightMAX: {fileID: 1789788046270784}
   m_spawnPointLeftMIN: {fileID: 1001980884113930}
@@ -181,3 +182,27 @@ MonoBehaviour:
   m_startForceMAX: 7
   m_nextLevel: Level02
   m_difficulty: 0
+  m_difficultyCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

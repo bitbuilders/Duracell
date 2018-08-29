@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         m_time += Time.deltaTime;
-        if (m_time >= m_throwCooldown && Input.GetButtonUp("Fire1"))
+        if (m_time >= m_throwCooldown && Input.GetButtonDown("Fire1"))
         {
             m_time = 0.0f;
             Fire();

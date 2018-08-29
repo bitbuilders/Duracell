@@ -48,6 +48,8 @@ public class Arrow : MonoBehaviour
             m_holding = false;
         }
 
+        m_holding = true;
+
         if (m_holding)
         {
             m_t += Time.deltaTime;
